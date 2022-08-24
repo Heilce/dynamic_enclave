@@ -1,0 +1,407 @@
+rm -f *.manifest *.manifest.sgx *.token *.sig OUTPUT scripts/testdir/*
+graphene-manifest \
+	-Dlog_level=error \
+	-Dexecdir=/bin \
+	-Darch_libdir=/lib/x86_64-linux-gnu \
+	manifest.template >bash.manifest
+graphene-sgx-sign \
+	--key ../../Pal/src/host/Linux-SGX/signer/enclave-key.pem \
+	--manifest bash.manifest \
+	--output bash.manifest.sgx
+{'loader': {'preload': 'file:/usr/local/lib/x86_64-linux-gnu/graphene/libsysdb.so', 'log_level': 'error', 'env': {'LD_LIBRARY_PATH': '/lib:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu', 'PATH': '/bin'}, 'insecure__use_cmdline_argv': True}, 'libos': {'entrypoint': '/bin/bash'}, 'fs': {'mount': {'lib': {'type': 'chroot', 'path': '/lib', 'uri': 'file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc'}, 'lib64': {'type': 'chroot', 'path': '/lib/x86_64-linux-gnu', 'uri': 'file:/lib/x86_64-linux-gnu'}, 'usr_lib': {'type': 'chroot', 'path': '/usr/lib', 'uri': 'file:/usr/lib'}, 'bin': {'type': 'chroot', 'path': '/bin', 'uri': 'file:/bin'}}}, 'sgx': {'nonpie_binary': True, 'enclave_size': '256M', 'thread_num': 4, 'trusted_files': {'execs': 'file:/bin/', 'runtime': 'file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/', 'arch_libdir': 'file:/lib/x86_64-linux-gnu/', 'usr_arch_libdir': 'file:/usr//lib/x86_64-linux-gnu/'}, 'allowed_files': {'scripts': 'file:scripts/'}, 'isvprodid': 0, 'isvsvn': 0, 'remote_attestation': False, 'debug': True, 'require_avx': False, 'require_avx512': False, 'require_mpx': False, 'require_pkru': False, 'support_exinfo': False, 'enable_stats': False}}
+{'output': 'bash.manifest.sgx', 'libpal': '/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so', 'key': '../../Pal/src/host/Linux-SGX/signer/enclave-key.pem', 'manifest': 'bash.manifest'}
+chenyp
+Attributes:
+    size:        0x10000000
+    thread_num:  4
+    isv_prod_id: 0
+    isv_svn:     0
+    attr.flags:  0600000000000000
+    attr.xfrm:   0300000000000000
+    misc_select: 00000000
+    date:        2022-04-11
+Memory:
+    000000000ff7d000-0000000010000000 [REG:R--] (manifest) measured
+    000000000ff5d000-000000000ff7d000 [REG:RW-] (ssa) measured
+    000000000ff59000-000000000ff5d000 [TCS:---] (tcs) measured
+    000000000ff55000-000000000ff59000 [REG:RW-] (tls) measured
+    000000000ff15000-000000000ff55000 [REG:RW-] (stack) measured
+    000000000fed5000-000000000ff15000 [REG:RW-] (stack) measured
+    000000000fe95000-000000000fed5000 [REG:RW-] (stack) measured
+    000000000fe55000-000000000fe95000 [REG:RW-] (stack) measured
+    000000000fe45000-000000000fe55000 [REG:RW-] (sig_stack) measured
+    000000000fe35000-000000000fe45000 [REG:RW-] (sig_stack) measured
+    000000000fe25000-000000000fe35000 [REG:RW-] (sig_stack) measured
+    000000000fe15000-000000000fe25000 [REG:RW-] (sig_stack) measured
+    000000000b9f9000-000000000ba3c000 [REG:R-X] (code) measured
+    000000000ba3c000-000000000fe15000 [REG:RW-] (data) measured
+    0000000000010000-000000000b9f9000 [REG:RWX] (free)
+Measurement:
+    5d0c1c65ca1191be0b0f985b5ab5d9a6a7efdf919fa474cc60267a5176779a7d
+graphene-sgx-get-token --output bash.token --sig bash.sig
+Attributes:
+    mr_enclave:  5d0c1c65ca1191be0b0f985b5ab5d9a6a7efdf919fa474cc60267a5176779a7d
+    mr_signer:   4afc02dbed9b5ae77c818a8c4822d299256bfd41678e6e73fda3574a76dc1068
+    isv_prod_id: 0
+    isv_svn:     0
+    attr.flags:  0600000000000000
+    attr.xfrm:   e700000000000000
+    misc_select: 00000000
+    misc_mask:   00000000
+    modulus:     759b34846c858de6cf229b972a267296...
+    exponent:    3
+    signature:   ca542716b08d4b918bd1eda14f5692a4...
+    date:        2022-04-11
+
+
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/loader /usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so init ./bash -c ls
+chen_yp**********
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/pal-sgx
+chen_yp 1105
+
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/loader
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+init
+./bash
+-c
+ls
+Manifest file: ./bash.manifest.sgx
+excute complte
+
+chen_yp encalve->libpal_uri
+file:/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+ecall_enclave_start
+
+file:/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+./bash
+sgx_ecall_chenyp
+
+chen we are in pal_linux_main in host
+file:/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+./bash
+error: Detected deprecated syntax. Consider switching to new syntax: 'sgx.allowed_files = ["file1", ..]'.
+we are in pal main in src
+
+error: Using insecure argv source. Graphene will continue application execution, but this configuration must not be used in production!
+load_libraries
+chenyp preload
+
+file:/usr/local/lib/x86_64-linux-gnu/graphene/libsysdb.so
+
+chenyp load library name
+file:/usr/local/lib/x86_64-linux-gnu/graphene/libsysdb.so
+
+load_elf_object
+
+chenyp entrypoint:
+(null)
+
+(null)
+
+start_execution
+
+./bash
+
+-c
+
+ls
+
+LD_LIBRARY_PATH=/lib:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu
+
+PATH=/bin
+
+start_execution++++++++-------------
+[P1:T1:] init_important_handles
+[P1:T1:] chenyp++++++++++++++__chroot_open
+
+[P1:T1:] dev:tty
+
+[P1:T1:] chenyp++++++++++++++__chroot_open
+
+[P1:T1:] dev:tty
+
+[P1:T1:] +++++++++++++++++++++=init_exec_handle
+[P1:T1:] chenyp open excutable = open_executable
+
+[P1:T1:] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:] chenyp++++++++++++++__chroot_open
+
+[P1:T1:] file:/bin/bash
+
+[P1:T1:bash] init_stack
+
+[P1:T1:bash] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/ld-linux-x86-64.so.2
+
+[P1:T1:bash] init_elf_objects++++++++++++++ld.so
+
+[P1:T1:bash] init_ipc_worker++++++++++++++++++++++
+
+[P1:T1:bash] Shim process initialized
+[P1:T1:bash] execute_elf_object++++++++++after load bash
+[P1:T1:bash] shim_do_faccessate
+
+[P1:T1:bash] /etc/ld.so.preload
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/lib/x86_64-linux-gnu/libtinfo.so.5
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/lib/x86_64-linux-gnu/libtinfo.so.5
+
+[P1:T1:bash] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libdl.so.2
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libdl.so.2
+
+[P1:T1:bash] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libc.so.6
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libc.so.6
+
+[P1:T1:bash] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] dev:tty
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_faccessate
+
+[P1:T1:bash] /bin/ls
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_faccessate
+
+[P1:T1:bash] /bin/ls
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_faccessate
+
+[P1:T1:bash] /bin/ls
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_faccessate
+
+[P1:T1:bash] /bin/ls
+
+[P1:T1:bash] shim_do_execve
+
+[P1:T1:bash] chenyp open excutable = open_executable
+
+[P1:T1:bash] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/bin/ls
+
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/ld-linux-x86-64.so.2
+
+[P1:T1:ls] shim_do_faccessate
+
+[P1:T1:ls] /etc/ld.so.preload
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/lib/x86_64-linux-gnu/libselinux.so.1
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/lib/x86_64-linux-gnu/libselinux.so.1
+
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libc.so.6
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libc.so.6
+
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/lib/x86_64-linux-gnu/libpcre.so.3
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/lib/x86_64-linux-gnu/libpcre.so.3
+
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libdl.so.2
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libdl.so.2
+
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libpthread.so.0
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libpthread.so.0
+
+[P1:T1:ls] shim_do_faccessate
+
+[P1:T1:ls] /etc/selinux/config
+
+[P1:T1:ls] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] dir:.
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chroot_readdir
+[P1:T1:ls] shim_do_newfstatat
+Makefile
+README.md
+bash.manifest
+bash.manifest.sgx
+bash.sig
+bash.token
+bin
+build
+dev
+lib
+log.txt
+log1.txt
+manifest.template
+proc
+scripts
+sys
+temp.txt
+test.sh
+usr

@@ -1,0 +1,19 @@
+
+
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/loader /usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so init ./bash -c ls
+Makefile
+README.md
+bash.manifest
+bash.manifest.sgx
+bash.sig
+bash.token
+bin
+build
+dev
+lib
+manifest.template
+proc
+scripts
+sys
+temp.txt
+usr

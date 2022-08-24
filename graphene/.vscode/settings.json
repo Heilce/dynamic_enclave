@@ -1,0 +1,29 @@
+{
+    "files.associations": {
+        "atomic": "c",
+        "*.tcc": "c",
+        "fstream": "c",
+        "sstream": "c",
+        "shim_table.h": "c",
+        "typeinfo": "c",
+        "cstdio": "c",
+        "sgx_syscall.h": "c",
+        "syscall.h": "c",
+        "api.h": "c",
+        "stdbool.h": "c",
+        "dynamic_link.h": "c",
+        "cstdarg": "c",
+        "array": "c",
+        "chrono": "c",
+        "string_view": "c",
+        "functional": "c",
+        "ratio": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "istream": "c",
+        "ostream": "c",
+        "shim_utils.h": "c",
+        "shim_vma.h": "c"
+    }
+}

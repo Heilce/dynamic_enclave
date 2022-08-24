@@ -1,0 +1,1233 @@
+
+
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/loader /usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so init ./R --slave --vanilla -f scripts/sample.r
+chen_yp**********
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/pal-sgx
+chen_yp 1105
+
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/loader
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+init
+./R
+--slave
+--vanilla
+Manifest file: ./R.manifest.sgx
+excute complte
+
+chen_yp encalve->libpal_uri
+file:/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+ecall_enclave_start
+
+file:/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+./R
+sgx_ecall_chenyp
+
+chen we are in pal_linux_main in host
+file:/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+./R
+error: Detected deprecated syntax. Consider switching to new syntax: 'sgx.allowed_files = ["file1", ..]'.
+we are in pal main in src
+
+error: Using insecure argv source. Graphene will continue application execution, but this configuration must not be used in production!
+load_libraries
+chenyp preload
+
+file:/usr/local/lib/x86_64-linux-gnu/graphene/libsysdb.so
+
+chenyp load library name
+file:/usr/local/lib/x86_64-linux-gnu/graphene/libsysdb.so
+
+load_elf_object
+
+chenyp entrypoint:
+(null)
+
+(null)
+
+start_execution
+
+./R
+
+--slave
+
+--vanilla
+
+-f
+
+scripts/sample.r
+
+LD_LIBRARY_PATH=/usr/lib/R/lib:/lib:/lib/x86_64-linux-gnu:/usr/lib:/usr//lib/x86_64-linux-gnu
+
+PATH=/usr/lib/R/bin:/usr/bin:/bin
+
+USERNAME=
+
+HOME=
+
+PWD=
+
+R_ARCH=
+
+R_HOME=/usr/lib/R
+
+start_execution++++++++-------------
+[P1:T1:] init_important_handles
+[P1:T1:] chenyp++++++++++++++__chroot_open
+
+[P1:T1:] dev:tty
+
+[P1:T1:] chenyp++++++++++++++__chroot_open
+
+[P1:T1:] dev:tty
+
+[P1:T1:] +++++++++++++++++++++=init_exec_handle
+[P1:T1:] chenyp open excutable = open_executable
+
+[P1:T1:] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:] chenyp++++++++++++++__chroot_open
+
+[P1:T1:] file:/usr/lib/R/bin/exec/R
+
+[P1:T1:R] init_stack
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/ld-linux-x86-64.so.2
+
+[P1:T1:R] init_elf_objects++++++++++++++ld.so
+
+[P1:T1:R] init_ipc_worker++++++++++++++++++++++
+
+[P1:T1:R] Shim process initialized
+[P1:T1:R] execute_elf_object++++++++++after load bash
+[P1:T1:R] shim_do_faccessate
+
+[P1:T1:R] /etc/ld.so.preload
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/lib/libR.so
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/lib/libR.so
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libc.so.6
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libc.so.6
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libblas.so.3
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libblas.so.3
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libm.so.6
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libm.so.6
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libreadline.so.7
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libreadline.so.7
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libpcre.so.3
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libpcre.so.3
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/liblzma.so.5
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/liblzma.so.5
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libbz2.so.1.0
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libbz2.so.1.0
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libz.so.1
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libz.so.1
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/librt.so.1
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/librt.so.1
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libdl.so.2
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libdl.so.2
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libicuuc.so.60
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libicuuc.so.60
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libicui18n.so.60
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libicui18n.so.60
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libgomp.so.1
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libgomp.so.1
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libpthread.so.0
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libpthread.so.0
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libtinfo.so.5
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libtinfo.so.5
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libicudata.so.60
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libicudata.so.60
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libgcc_s.so.1
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/lib/x86_64-linux-gnu/libgcc_s.so.1
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/etc/Renviron
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:./scripts/sample.r
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] dir:/tmp/RtmpBPll7e
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/base/R/base
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/base/R/base.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/base/R/base.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/base/R/base.rdb
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/base/R/Rprofile
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/R/methods
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/R/methods
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/R/methods.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/R/methods.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/libs/methods.so
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/libs/methods.so
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/methods/R/methods.rdb
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/datasets/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/datasets/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/datasets/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/datasets/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/datasets/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/datasets/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/datasets/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/datasets/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/datasets/data/Rdata.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/datasets/data/Rdata.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/R/utils
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/R/utils
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/R/utils.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/R/utils.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/R/sysdata.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/R/sysdata.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/R/utils.rdb
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/libs/utils.so
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/utils/libs/utils.so
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/R/grDevices
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/R/grDevices
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/R/grDevices.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/R/grDevices.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/R/grDevices.rdb
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/libs/grDevices.so
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/grDevices/libs/grDevices.so
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/R/graphics
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/R/graphics
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/R/graphics.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/R/graphics.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/R/graphics.rdb
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/libs/graphics.so
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/graphics/libs/graphics.so
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/Meta/features.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/R/stats
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/R/stats
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/R/stats.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/R/stats.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/R/stats.rdb
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/libs/stats.so
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/stats/libs/stats.so
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/liblapack.so.3
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/liblapack.so.3
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libgfortran.so.4
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libgfortran.so.4
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libquadmath.so.0
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/x86_64-linux-gnu/libquadmath.so.0
+
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/compiler/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/compiler/Meta/nsInfo.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/compiler/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/compiler/Meta/package.rds
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/compiler/R/compiler
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/compiler/R/compiler
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/compiler/R/compiler.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/compiler/R/compiler.rdx
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] chenxxxxxxxxxxxxxxxxxxxxxxxxxxxx=dentry_open
+
+[P1:T1:R] chenyp++++++++++++++__chroot_open
+
+[P1:T1:R] file:/usr/lib/R/library/compiler/R/compiler.rdb
+
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[P1:T1:R] shim_do_newfstatat
+[1] 2 3 1
+[1] 3 2 1
+[1] 3 3 3 5
+ [1] 2 2 2 2 2 2 1 2 2 2
+[1] "success"
+chen_yp**********
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/pal-sgx
+chen_yp 1105
+
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/pal-sgx
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+child
+41
+[P1:T1:R] error: process creation failed

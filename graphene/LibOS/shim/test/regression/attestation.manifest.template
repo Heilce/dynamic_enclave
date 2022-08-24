@@ -1,0 +1,25 @@
+loader.preload = "file:{{ graphene.libos }}"
+libos.entrypoint = "attestation"
+loader.argv0_override = "attestation"
+
+loader.env.LD_LIBRARY_PATH = "/lib"
+loader.insecure__use_cmdline_argv = true
+
+fs.mount.lib.type = "chroot"
+fs.mount.lib.path = "/lib"
+fs.mount.lib.uri = "file:{{ graphene.runtimedir() }}"
+
+fs.mount.bin.type = "chroot"
+fs.mount.bin.path = "/bin"
+fs.mount.bin.uri = "file:/bin"
+
+sgx.nonpie_binary = true
+sgx.remote_attestation = true
+
+sgx.ra_client_spid = "{{ ra_client_spid }}"
+sgx.ra_client_linkable = {{ ra_client_linkable }}
+
+sgx.trusted_files = [
+  "file:{{ graphene.runtimedir() }}/",
+  "file:attestation",
+]

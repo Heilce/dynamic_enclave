@@ -1,0 +1,30 @@
+Graphene itself is licensed under the LGPL-3.0-or-later.
+
+Graphene also includes the following third party sources (and licenses):
+
+mbedtls crypto libraries - Apache 2.0
+
+Internet Software Consortium (permissive license): common/src/network/inet_pton.c
+
+MIT JOS (mix of MIT and BSD licenses):
+* common/src/stdlib/printfmt.c
+
+cJSON - MIT
+tomlc99 - MIT
+uthash - BSD revised
+
+A number of files taken from other C libraries:
+* glibc - LGPL
+ ** LibOS/shim/include/elf.h
+ ** LibOS/shim/src/elf/ - basically the whole directory, and most code related to linking and loading (e.g., Pal/src/db_rtld.c)
+ ** Pal/include/elf/elf.h
+ ** Pal/include/sysdeps/generic/ldsodefs.h
+ ** common/src/network/hton.c
+ ** common/src/string/strchr.c
+ ** Pal/src/dynamic_link.h, do-rel.h, dl-machine-x86_64.h
+ ** Pal/include/arch/x86_64/Linux/ - whole directory - for signal API definitions
+ ** We also build a patched glibc
+
+* musl - MIT
+ ** common/src/string/strspn.c
+ ** common/src/string/ctype.c

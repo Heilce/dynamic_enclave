@@ -1,0 +1,441 @@
+ninja: Entering directory `build/'
+[1/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._db_exception.c.o'.
+[2/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._db_events.c.o'.
+[3/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._db_process.c.o'.
+[4/180] Generating pal.map[direct] with a custom command.
+[5/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._db_memory.c.o'.
+[6/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._db_misc.c.o'.
+[7/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._db_threading.c.o'.
+[8/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._pal_error.c.o'.
+[9/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._db_object.c.o'.
+[10/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._Linux-common_main_exec_path.c.o'.
+[11/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._Linux-common_graphene_unix_socket_addr.c.o'.
+[12/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._Linux-common_bogomips.c.o'.
+[13/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._printf.c.o'.
+[14/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._db_main.c.o'.
+[15/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._Linux-common_debug_map.c.o'.
+[16/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._Linux-common_timespec_utils.c.o'.
+[17/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._Linux-common_arch_x86_64_syscall.S.o'.
+[18/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._Linux-common_file_utils.c.o'.
+[19/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._db_streams.c.o'.
+[20/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._slab.c.o'.
+[21/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_events.c.o'.
+[22/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_devices.c.o'.
+[23/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_eventfd.c.o'.
+[24/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_misc.c.o'.
+[25/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_exception.c.o'.
+[26/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_object.c.o'.
+[27/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._.._db_rtld.c.o'.
+[28/180] Compiling C object 'Pal/src/host/Linux/pal@sha/.._Linux-common_topo_info.c.o'.
+[29/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_memory.c.o'.
+[30/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_files.c.o'.
+[31/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_rtld.c.o'.
+[32/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_process.c.o'.
+[33/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_main.c.o'.
+[34/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_pipes.c.o'.
+[35/180] Compiling C object 'Pal/src/host/Linux/pal@sha/arch_x86_64_pal_start.S.o'.
+[36/180] Compiling C object 'Pal/src/host/Linux/pal@sha/arch_x86_64_db_arch_exception.c.o'.
+[37/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._db_events.c.o'.
+[38/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._db_exception.c.o'.
+[39/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._db_memory.c.o'.
+[40/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_streams.c.o'.
+[41/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._db_misc.c.o'.
+[42/180] Compiling C object 'Pal/src/host/Linux/pal@sha/arch_x86_64_db_arch_misc.c.o'.
+[43/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_threading.c.o'.
+[44/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._db_process.c.o'.
+[45/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._db_object.c.o'.
+[46/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._pal_error.c.o'.
+[47/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._printf.c.o'.
+[48/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._db_threading.c.o'.
+[49/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._Linux-common_debug_map.c.o'.
+[50/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._Linux-common_bogomips.c.o'.
+[51/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._Linux-common_file_utils.c.o'.
+[52/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._Linux-common_main_exec_path.c.o'.
+[53/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._db_main.c.o'.
+[54/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._Linux-common_arch_x86_64_syscall.S.o'.
+[55/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._Linux-common_graphene_unix_socket_addr.c.o'.
+[56/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._Linux-common_timespec_utils.c.o'.
+[57/180] Compiling C object 'Pal/src/host/Linux/pal@sha/db_sockets.c.o'.
+[58/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._slab.c.o'.
+[59/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_devices.c.o'.
+[60/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_eventfd.c.o'.
+[61/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._db_streams.c.o'.
+[62/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._Linux-common_topo_info.c.o'.
+[63/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_events.c.o'.
+[64/180] Compiling C object 'Pal/src/host/Linux/pal@sta/.._.._db_rtld.c.o'.
+[65/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_misc.c.o'.
+[66/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_exception.c.o'.
+[67/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_object.c.o'.
+[68/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_memory.c.o'.
+[69/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_rtld.c.o'.
+[70/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_files.c.o'.
+[71/180] Linking target Pal/src/host/Linux/libpal.so.
+[72/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_pipes.c.o'.
+[73/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_process.c.o'.
+[74/180] Compiling C object 'Pal/src/host/Linux/pal@sta/arch_x86_64_pal_start.S.o'.
+[75/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_main.c.o'.
+[76/180] Compiling C object 'Pal/src/host/Linux/pal@sta/arch_x86_64_db_arch_exception.c.o'.
+[77/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_threading.c.o'.
+[78/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_streams.c.o'.
+[79/180] Compiling C object 'LibOS/shim/src/vdso/arch/x86_64/vdso@sha/vdso.c.o'.
+[80/180] Linking target LibOS/shim/src/vdso/arch/x86_64/vdso.so.dbg.
+[81/180] Generating vdso_not_checked.so with a custom command.
+[82/180] Generating generated-offsets.s with a custom command.
+[83/180] Generating vdso.so with a custom command.
+[84/180] Generating vdso-data.o with a custom command.
+[85/180] Compiling C object 'Pal/src/host/Linux/pal@sta/arch_x86_64_db_arch_misc.c.o'.
+[86/180] Generating asm-offsets.h with a custom command.
+[87/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_proc_ipc-thread.c.o'.
+[88/180] Compiling C object 'LibOS/shim/src/sysdb@sha/bookkeep_shim_pid.c.o'.
+[89/180] Compiling C object 'Pal/src/host/Linux/pal@sta/db_sockets.c.o'.
+[90/180] Generating symbol file 'Pal/src/host/Linux/pal@sha/Pal/src/host/Linux/libpal.so.symbols'.
+[91/180] Linking static target Pal/src/host/Linux/libpal.a.
+[92/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_dev_fs.c.o'.
+[93/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_dev_attestation.c.o'.
+[94/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_eventfd_fs.c.o'.
+[95/180] Compiling C object 'LibOS/shim/src/sysdb@sha/bookkeep_shim_process.c.o'.
+[96/180] Compiling C object 'LibOS/shim/src/sysdb@sha/bookkeep_shim_signal.c.o'.
+[97/180] Compiling C object 'LibOS/shim/src/sysdb@sha/bookkeep_shim_thread.c.o'.
+[98/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_proc_fs.c.o'.
+[99/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_pipe_fs.c.o'.
+[100/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_proc_info.c.o'.
+[101/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_shim_fs_hash.c.o'.
+[102/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_shim_fs_mem.c.o'.
+[103/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_proc_thread.c.o'.
+[104/180] Compiling C object 'LibOS/shim/src/sysdb@sha/bookkeep_shim_handle.c.o'.
+[105/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_shim_fs_util.c.o'.
+[106/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_shim_dcache.c.o'.
+[107/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_chroot_fs.c.o'.
+[108/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_sys_cache_info.c.o'.
+[109/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_sys_cpu_info.c.o'.
+[110/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_shim_fs_lock.c.o'.
+[111/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_sys_node_info.c.o'.
+[112/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_sys_fs.c.o'.
+[113/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_shim_namei.c.o'.
+[114/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_socket_fs.c.o'.
+[115/180] Compiling C object 'LibOS/shim/src/sysdb@sha/bookkeep_shim_vma.c.o'.
+[116/180] Compiling C object 'LibOS/shim/src/sysdb@sha/ipc_shim_ipc_child.c.o'.
+[117/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_shim_fs.c.o'.
+[118/180] Compiling C object 'LibOS/shim/src/sysdb@sha/ipc_shim_ipc_fs_lock.c.o'.
+[119/180] Compiling C object 'LibOS/shim/src/sysdb@sha/ipc_shim_ipc_process_info.c.o'.
+[120/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_shim_fs_pseudo.c.o'.
+[121/180] Compiling C object 'LibOS/shim/src/sysdb@sha/ipc_shim_ipc_signal.c.o'.
+[122/180] Compiling C object 'LibOS/shim/src/sysdb@sha/ipc_shim_ipc_sync.c.o'.
+[123/180] Compiling C object 'LibOS/shim/src/sysdb@sha/ipc_shim_ipc_vmid.c.o'.
+[124/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_call.c.o'.
+[125/180] Compiling C object 'LibOS/shim/src/sysdb@sha/ipc_shim_ipc.c.o'.
+[126/180] Compiling C object 'LibOS/shim/src/sysdb@sha/fs_tmpfs_fs.c.o'.
+[127/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_debug.c.o'.
+[128/180] Compiling C object 'LibOS/shim/src/sysdb@sha/ipc_shim_ipc_pid.c.o'.
+[129/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_object.c.o'.
+[130/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_syscalls.c.o'.
+[131/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_utils.c.o'.
+[132/180] Compiling C object 'LibOS/shim/src/sysdb@sha/ipc_shim_ipc_worker.c.o'.
+[133/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_async.c.o'.
+[134/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_init.c.o'.
+[135/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_malloc.c.o'.
+[136/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_access.c.o'.
+[137/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_alarm.c.o'.
+[138/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_checkpoint.c.o'.
+[139/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_parser.c.o'.
+[140/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_dup.c.o'.
+[141/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_eventfd.c.o'.
+[142/180] Compiling C object 'LibOS/shim/src/sysdb@sha/shim_rtld.c.o'.
+[143/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_clone.c.o'.
+[144/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sync_shim_sync_server.c.o'.
+[145/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_brk.c.o'.
+[146/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_exec.c.o'.
+[147/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_fork.c.o'.
+[148/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_exit.c.o'.
+[149/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sync_shim_sync_client.c.o'.
+[150/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_getrandom.c.o'.
+[151/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_getcwd.c.o'.
+[152/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_fcntl.c.o'.
+[153/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_epoll.c.o'.
+[154/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_getpid.c.o'.
+[155/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_ioctl.c.o'.
+[156/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_file.c.o'.
+[157/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_getuid.c.o'.
+[158/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_getrlimit.c.o'.
+[159/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_mmap.c.o'.
+[160/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_sleep.c.o'.
+[161/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_open.c.o'.
+[162/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_pipe.c.o'.
+[163/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_poll.c.o'.
+[164/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_sched.c.o'.
+[165/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_stat.c.o'.
+[166/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_sigaction.c.o'.
+[167/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_time.c.o'.
+[168/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_uname.c.o'.
+[169/180] Compiling C object 'LibOS/shim/src/sysdb@sha/arch_x86_64_start.S.o'.
+[170/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_wrappers.c.o'.
+[171/180] Compiling C object 'LibOS/shim/src/sysdb@sha/arch_x86_64_syscallas.S.o'.
+[172/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_futex.c.o'.
+[173/180] Compiling C object 'LibOS/shim/src/sysdb@sha/utils_log.c.o'.
+[174/180] Compiling C object 'LibOS/shim/src/sysdb@sha/arch_x86_64_shim_arch_prctl.c.o'.
+[175/180] Compiling C object 'LibOS/shim/src/sysdb@sha/arch_x86_64_shim_table.c.o'.
+[176/180] Compiling C object 'LibOS/shim/src/sysdb@sha/utils_strobjs.c.o'.
+[177/180] Compiling C object 'LibOS/shim/src/sysdb@sha/arch_x86_64_shim_context.c.o'.
+[178/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_wait.c.o'.
+[179/180] Compiling C object 'LibOS/shim/src/sysdb@sha/sys_shim_socket.c.o'.
+[180/180] Linking target LibOS/shim/src/libsysdb.so.
+/usr/local/bin/ld: LibOS/shim/src/sysdb@sha/bookkeep_shim_handle.c.o: warning: relocation in read-only section `.cp_name.handle'
+/usr/local/bin/ld: warning: creating DT_TEXTREL in a shared object
+
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/loader
+/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+init
+./bash
+-c
+ls
+Manifest file: ./bash.manifest.sgx
+excute complte
+
+chen_yp encalve->libpal_uri
+file:/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+ecall_enclave_start
+
+file:/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+./bash
+sgx_ecall_chenyp
+
+chen we are in pal_linux_main in host
+file:/usr/local/lib/x86_64-linux-gnu/graphene/sgx/libpal.so
+./bash
+error: Detected deprecated syntax. Consider switching to new syntax: 'sgx.allowed_files = ["file1", ..]'.
+we are in pal main in src
+
+error: Using insecure argv source. Graphene will continue application execution, but this configuration must not be used in production!
+load_libraries
+chenyp preload
+
+file:/usr/local/lib/x86_64-linux-gnu/graphene/libsysdb.so
+
+chenyp load library name
+file:/usr/local/lib/x86_64-linux-gnu/graphene/libsysdb.so
+
+load_elf_object
+
+chenyp entrypoint:
+(null)
+
+(null)
+
+start_execution
+
+./bash
+
+-c
+
+ls
+
+LD_LIBRARY_PATH=/lib:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu
+
+PATH=/bin
+
+start_execution++++++++-------------
+[P1:T1:] chenyp++++++++++++++__chroot_open
+
+[P1:T1:] dev:tty
+
+[P1:T1:] chenyp++++++++++++++__chroot_open
+
+[P1:T1:] dev:tty
+
+[P1:T1:] chenyp++++++++++++++__chroot_open
+
+[P1:T1:] file:/bin/bash
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/ld-linux-x86-64.so.2
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/lib/x86_64-linux-gnu/libtinfo.so.5
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/lib/x86_64-linux-gnu/libtinfo.so.5
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libdl.so.2
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libdl.so.2
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libc.so.6
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libc.so.6
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] dev:tty
+
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_newfstatat
+[P1:T1:bash] shim_do_execve
+
+[P1:T1:bash] chenyp++++++++++++++__chroot_open
+
+[P1:T1:bash] file:/bin/ls
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/ld-linux-x86-64.so.2
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/lib/x86_64-linux-gnu/libselinux.so.1
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/lib/x86_64-linux-gnu/libselinux.so.1
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libc.so.6
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libc.so.6
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/lib/x86_64-linux-gnu/libpcre.so.3
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/lib/x86_64-linux-gnu/libpcre.so.3
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libdl.so.2
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libdl.so.2
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libpthread.so.0
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/libpthread.so.0
+
+[P1:T1:ls] chenyp++++++++++++++__chroot_open
+
+[P1:T1:ls] dir:.
+
+[P1:T1:ls] shim_do_newfstatat
+[P1:T1:ls] chroot_readdir
+[P1:T1:ls] shim_do_newfstatat
+Makefile
+README.md
+bash.manifest
+bash.manifest.sgx
+bash.sig
+bash.token
+bin
+build
+dev
+lib
+manifest.template
+proc
+scripts
+sys
+temp.txt
+usr
