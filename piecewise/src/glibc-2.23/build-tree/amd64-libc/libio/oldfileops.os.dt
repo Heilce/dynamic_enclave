@@ -1,0 +1,19 @@
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/libio/oldfileops.os: \
+ oldfileops.c \
+ /root/piecewise/src/glibc-2.23/build-tree/amd64-libc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build-tree/amd64-libc/config.h \
+ ../sysdeps/generic/symbol-hacks.h ../include/shlib-compat.h \
+ /root/piecewise/src/glibc-2.23/build-tree/amd64-libc/abi-versions.h
+
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:
+
+../include/shlib-compat.h:
+
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/abi-versions.h:

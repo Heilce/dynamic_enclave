@@ -1,0 +1,14 @@
+/root/piecewise/src/glibc-2.23/build_glibc/nptl/lll_timedwait_tid.os: \
+ ../sysdeps/unix/sysv/linux/x86_64/lll_timedwait_tid.c \
+ /root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build_glibc/config.h \
+ ../sysdeps/generic/symbol-hacks.h
+
+/root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build_glibc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:

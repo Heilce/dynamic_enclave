@@ -1,0 +1,14 @@
+/root/piecewise/src/glibc-2.23/build_glibc/nptl/ptw-pwrite64.os: \
+ ../sysdeps/unix/sysv/linux/wordsize-64/pwrite64.c \
+ /root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build_glibc/config.h \
+ ../sysdeps/generic/symbol-hacks.h
+
+/root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build_glibc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:

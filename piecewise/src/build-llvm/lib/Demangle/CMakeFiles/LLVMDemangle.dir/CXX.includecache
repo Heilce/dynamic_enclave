@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/piecewise/src/llvm-4.0.0.src/include/llvm/Demangle/Demangle.h
+cstddef
+-
+
+/root/piecewise/src/llvm-4.0.0.src/lib/Demangle/ItaniumDemangle.cpp
+llvm/Demangle/Demangle.h
+/root/piecewise/src/llvm-4.0.0.src/lib/Demangle/llvm/Demangle/Demangle.h
+algorithm
+-
+cctype
+-
+cstdlib
+-
+cstring
+-
+numeric
+-
+string
+-
+vector
+-
+

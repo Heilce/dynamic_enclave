@@ -1,0 +1,14 @@
+/root/piecewise/src/glibc-2.23/build_glibc/login/getutmpx.o: \
+ ../sysdeps/gnu/getutmpx.c \
+ /root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build_glibc/config.h \
+ ../sysdeps/generic/symbol-hacks.h
+
+/root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build_glibc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:

@@ -1,0 +1,17 @@
+/root/piecewise/src/glibc-2.23/build_glibc/nptl/pthread_spin_init.o: \
+ ../sysdeps/x86_64/nptl/pthread_spin_init.c \
+ /root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build_glibc/config.h \
+ ../sysdeps/generic/symbol-hacks.h \
+ ../sysdeps/i386/nptl/pthread_spin_init.c
+
+/root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build_glibc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:
+
+../sysdeps/i386/nptl/pthread_spin_init.c:

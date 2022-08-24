@@ -1,0 +1,55 @@
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/posix/rtld-environ.os: \
+ environ.c \
+ /root/piecewise/src/glibc-2.23/build-tree/amd64-libc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build-tree/amd64-libc/config.h \
+ ../sysdeps/generic/symbol-hacks.h ../include/unistd.h ../posix/unistd.h \
+ ../include/features.h ../include/stdc-predef.h ../include/sys/cdefs.h \
+ ../misc/sys/cdefs.h ../sysdeps/x86/bits/wordsize.h \
+ ../include/gnu/stubs.h ../sysdeps/unix/sysv/linux/bits/posix_opt.h \
+ ../sysdeps/unix/sysv/linux/x86/bits/environments.h ../bits/types.h \
+ ../sysdeps/unix/sysv/linux/x86/bits/typesizes.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h ../bits/confname.h \
+ ../include/getopt.h ../posix/getopt.h ../sysdeps/generic/dl-unistd.h
+
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:
+
+../include/unistd.h:
+
+../posix/unistd.h:
+
+../include/features.h:
+
+../include/stdc-predef.h:
+
+../include/sys/cdefs.h:
+
+../misc/sys/cdefs.h:
+
+../sysdeps/x86/bits/wordsize.h:
+
+../include/gnu/stubs.h:
+
+../sysdeps/unix/sysv/linux/bits/posix_opt.h:
+
+../sysdeps/unix/sysv/linux/x86/bits/environments.h:
+
+../bits/types.h:
+
+../sysdeps/unix/sysv/linux/x86/bits/typesizes.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h:
+
+../bits/confname.h:
+
+../include/getopt.h:
+
+../posix/getopt.h:
+
+../sysdeps/generic/dl-unistd.h:

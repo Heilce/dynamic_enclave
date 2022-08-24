@@ -1,0 +1,2017 @@
+--------------------
+./configure
+Wed Aug  2 22:06:28 EDT 2017
+=== ztest5400.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -c ztest5400.c
+Code Pointer Mode: local scan
+List of compartments generated: 
+hello: 
+
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest5400.c ===
+int foo() { return 0; }
+===
+clang -c -flto ztest5400.c
+
+Checking for shared library support...
+=== ztest5400.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -w -c -flto -fPIC ztest5400.c
+clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -flto -fPIC -o ztest5400.so ztest5400.o
+Code Pointer Mode: local scan
+List of compartments generated: 
+hello: 
+
+Building shared library libz.so.1.2.8 with clang.
+
+=== ztest5400.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest5400.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest5400.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest5400 ztest5400.c
+Code Pointer Mode: local scan
+List of compartments generated: 
+main: 
+
+Checking for strerror... Yes.
+
+=== ztest5400.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest5400.c
+Checking for unistd.h... Yes.
+
+=== ztest5400.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest5400.c
+Checking for stdarg.h... Yes.
+
+=== ztest5400.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest5400.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest5400.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest5400 ztest5400.c
+Code Pointer Mode: local scan
+List of compartments generated: 
+main: mytest.main 
+mytest: 
+
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest5400.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest5400.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest5400.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest5400.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = clang
+CFLAGS = -flto -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = clang -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -flto -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure
+Wed Aug  2 22:17:18 EDT 2017
+=== ztest7043.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -c ztest7043.c
+Code Pointer Mode: local scan
+List of compartments generated: 
+hello: 
+
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest7043.c ===
+int foo() { return 0; }
+===
+clang -c -flto ztest7043.c
+
+Checking for shared library support...
+=== ztest7043.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -w -c -flto -fPIC ztest7043.c
+clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -flto -fPIC -o ztest7043.so ztest7043.o
+Code Pointer Mode: local scan
+List of compartments generated: 
+hello: 
+
+Building shared library libz.so.1.2.8 with clang.
+
+=== ztest7043.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest7043.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest7043.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest7043 ztest7043.c
+Code Pointer Mode: local scan
+List of compartments generated: 
+main: 
+
+Checking for strerror... Yes.
+
+=== ztest7043.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest7043.c
+Checking for unistd.h... Yes.
+
+=== ztest7043.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest7043.c
+Checking for stdarg.h... Yes.
+
+=== ztest7043.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest7043.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest7043.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest7043 ztest7043.c
+Code Pointer Mode: local scan
+List of compartments generated: 
+main: mytest.main 
+mytest: 
+
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest7043.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest7043.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest7043.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest7043.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = clang
+CFLAGS = -flto -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = clang -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -flto -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure
+Tue Aug 22 12:46:01 EDT 2017
+=== ztest19323.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -c ztest19323.c
+Code Pointer Mode: local scan
+Pointer analysis
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest19323.c ===
+int foo() { return 0; }
+===
+clang -c -flto ztest19323.c
+
+Checking for shared library support...
+=== ztest19323.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -w -c -flto -fPIC ztest19323.c
+clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -flto -fPIC -o ztest19323.so ztest19323.o
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+Building shared library libz.so.1.2.8 with clang.
+
+=== ztest19323.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest19323.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest19323.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest19323 ztest19323.c
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+Checking for strerror... Yes.
+
+=== ztest19323.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest19323.c
+Checking for unistd.h... Yes.
+
+=== ztest19323.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest19323.c
+Checking for stdarg.h... Yes.
+
+=== ztest19323.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest19323.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest19323.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest19323 ztest19323.c
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest19323.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest19323.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest19323.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest19323.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = clang
+CFLAGS = -flto -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = clang -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -flto -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure
+Fri Apr 29 12:18:21 CST 2022
+=== ztest17979.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -c ztest17979.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest17979.c ===
+int foo() { return 0; }
+===
+clang -c -flto ztest17979.c
+
+Checking for shared library support...
+=== ztest17979.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -w -c -flto -fPIC ztest17979.c
+clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -flto -fPIC -o ztest17979.so ztest17979.o
+Building shared library libz.so.1.2.8 with clang.
+
+=== ztest17979.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest17979.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest17979.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest17979 ztest17979.c
+Checking for strerror... Yes.
+
+=== ztest17979.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest17979.c
+Checking for unistd.h... Yes.
+
+=== ztest17979.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest17979.c
+Checking for stdarg.h... Yes.
+
+=== ztest17979.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest17979.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest17979.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest17979 ztest17979.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest17979.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest17979.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest17979.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest17979.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = clang
+CFLAGS = -flto -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = clang -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -flto -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure
+Fri Apr 29 12:19:37 CST 2022
+Checking for gcc...
+=== ztest18495.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c ztest18495.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest18495.c ===
+int foo() { return 0; }
+===
+gcc -c -O3 ztest18495.c
+
+Checking for shared library support...
+=== ztest18495.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest18495.c
+gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest18495.so ztest18495.o
+Building shared library libz.so.1.2.8 with gcc.
+
+=== ztest18495.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest18495.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest18495.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest18495 ztest18495.c
+Checking for strerror... Yes.
+
+=== ztest18495.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest18495.c
+Checking for unistd.h... Yes.
+
+=== ztest18495.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest18495.c
+Checking for stdarg.h... Yes.
+
+=== ztest18495.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest18495.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest18495.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest18495 ztest18495.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest18495.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest18495.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest18495.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest18495.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure
+Fri Apr 29 12:19:46 CST 2022
+=== ztest18830.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -c ztest18830.c
+
+
+Include all virtual functions
+Code Pointer Mode: local scan
+
+hello:
+getchar 
+getchar:
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest18830.c ===
+int foo() { return 0; }
+===
+clang -c -flto ztest18830.c
+
+Checking for shared library support...
+=== ztest18830.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -w -c -flto -fPIC ztest18830.c
+clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -flto -fPIC -o ztest18830.so ztest18830.o
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+processObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .data.rel.localget section name = .rela.data.rel.localget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectprocessObject
+hello:
+getchar 
+getchar:
+Building shared library libz.so.1.2.8 with clang.
+
+=== ztest18830.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest18830.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest18830.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest18830 ztest18830.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+main:
+__errno_location strerror strlen 
+__errno_location:
+
+strerror:
+
+strlen:
+Checking for strerror... Yes.
+
+=== ztest18830.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest18830.c
+Checking for unistd.h... Yes.
+
+=== ztest18830.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest18830.c
+Checking for stdarg.h... Yes.
+
+=== ztest18830.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest18830.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest18830.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest18830 ztest18830.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+mytest:
+vsnprintf 
+llvm.va_start:
+
+vsnprintf:
+
+llvm.va_end:
+
+main:
+mytest Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest18830.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest18830.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest18830.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest18830.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = clang
+CFLAGS = -flto -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = clang -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -flto -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure
+Fri Apr 29 12:24:39 CST 2022
+=== ztest21500.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -c ztest21500.c
+
+
+Include all virtual functions
+Code Pointer Mode: local scan
+
+hello:
+getchar 
+getchar:
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest21500.c ===
+int foo() { return 0; }
+===
+clang -c -flto ztest21500.c
+
+Checking for shared library support...
+=== ztest21500.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -w -c -flto -fPIC ztest21500.c
+clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -flto -fPIC -o ztest21500.so ztest21500.o
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+processObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .data.rel.localget section name = .rela.data.rel.localget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectprocessObject
+hello:
+getchar 
+getchar:
+Building shared library libz.so.1.2.8 with clang.
+
+=== ztest21500.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest21500.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest21500.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest21500 ztest21500.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+main:
+__errno_location strerror strlen 
+__errno_location:
+
+strerror:
+
+strlen:
+Checking for strerror... Yes.
+
+=== ztest21500.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest21500.c
+Checking for unistd.h... Yes.
+
+=== ztest21500.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest21500.c
+Checking for stdarg.h... Yes.
+
+=== ztest21500.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest21500.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest21500.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest21500 ztest21500.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+mytest:
+vsnprintf 
+llvm.va_start:
+
+vsnprintf:
+
+llvm.va_end:
+
+main:
+mytest Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest21500.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest21500.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest21500.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest21500.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = clang
+CFLAGS = -flto -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = clang -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -flto -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure
+Fri Apr 29 12:24:51 CST 2022
+=== ztest22164.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -c ztest22164.c
+
+
+Include all virtual functions
+Code Pointer Mode: local scan
+
+hello:
+getchar 
+getchar:
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest22164.c ===
+int foo() { return 0; }
+===
+clang -c -flto ztest22164.c
+
+Checking for shared library support...
+=== ztest22164.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -w -c -flto -fPIC ztest22164.c
+clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -flto -fPIC -o ztest22164.so ztest22164.o
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+processObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .data.rel.localget section name = .rela.data.rel.localget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectprocessObject
+hello:
+getchar 
+getchar:
+Building shared library libz.so.1.2.8 with clang.
+
+=== ztest22164.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22164.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest22164.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest22164 ztest22164.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+main:
+__errno_location strerror strlen 
+__errno_location:
+
+strerror:
+
+strlen:
+Checking for strerror... Yes.
+
+=== ztest22164.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22164.c
+Checking for unistd.h... Yes.
+
+=== ztest22164.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22164.c
+Checking for stdarg.h... Yes.
+
+=== ztest22164.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22164.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest22164.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest22164 ztest22164.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+mytest:
+vsnprintf 
+llvm.va_start:
+
+vsnprintf:
+
+llvm.va_end:
+
+main:
+mytest Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest22164.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22164.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest22164.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22164.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = clang
+CFLAGS = -flto -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = clang -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -flto -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure
+Fri Apr 29 12:27:44 CST 2022
+=== ztest22764.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -c ztest22764.c
+
+
+Include all virtual functions
+Code Pointer Mode: local scan
+
+hello:
+getchar 
+getchar:
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest22764.c ===
+int foo() { return 0; }
+===
+clang -c -flto ztest22764.c
+
+Checking for shared library support...
+=== ztest22764.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+clang -w -c -flto -fPIC ztest22764.c
+clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -flto -fPIC -o ztest22764.so ztest22764.o
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+processObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .data.rel.localget section name = .rela.data.rel.localget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectprocessObject
+hello:
+getchar 
+getchar:
+Building shared library libz.so.1.2.8 with clang.
+
+=== ztest22764.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22764.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest22764.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest22764 ztest22764.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+main:
+__errno_location strerror strlen 
+__errno_location:
+
+strerror:
+
+strlen:
+Checking for strerror... Yes.
+
+=== ztest22764.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22764.c
+Checking for unistd.h... Yes.
+
+=== ztest22764.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22764.c
+Checking for stdarg.h... Yes.
+
+=== ztest22764.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22764.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest22764.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest22764 ztest22764.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+mytest:
+vsnprintf 
+llvm.va_start:
+
+vsnprintf:
+
+llvm.va_end:
+
+main:
+mytest Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest22764.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22764.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest22764.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest22764.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = clang
+CFLAGS = -flto -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = clang -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -flto -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure
+Mon May 16 10:09:06 CST 2022
+=== ztest10653.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/root/piecewise/src/build-llvm/bin/clang -c ztest10653.c
+
+
+Include all virtual functions
+Code Pointer Mode: local scan
+Code Pointer Mode: local scan1
+hellogetchar
+hello:
+getchar 
+getchar:
+will read the assembly function of callgraphs
+AsmPrinter printf function Name() of callerhello
+the name of calleegetchar
+AsmPrinter printf function Name() of callergetchar
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest10653.c ===
+int foo() { return 0; }
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto ztest10653.c
+
+Checking for shared library support...
+=== ztest10653.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/root/piecewise/src/build-llvm/bin/clang -w -c -flto -fPIC ztest10653.c
+/root/piecewise/src/build-llvm/bin/clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -flto -fPIC -o ztest10653.so ztest10653.o
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+processObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .data.rel.localget section name = .rela.data.rel.localget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectprocessObject
+hello:
+getchar 
+getchar:
+Building shared library libz.so.1.2.8 with /root/piecewise/src/build-llvm/bin/clang.
+
+=== ztest10653.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest10653.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest10653.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+/root/piecewise/src/build-llvm/bin/clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest10653 ztest10653.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+main:
+__errno_location strerror strlen 
+__errno_location:
+
+strerror:
+
+strlen:
+Checking for strerror... Yes.
+
+=== ztest10653.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest10653.c
+Checking for unistd.h... Yes.
+
+=== ztest10653.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest10653.c
+Checking for stdarg.h... Yes.
+
+=== ztest10653.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest10653.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest10653.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/root/piecewise/src/build-llvm/bin/clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest10653 ztest10653.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+mytest:
+vsnprintf 
+llvm.va_start:
+
+vsnprintf:
+
+llvm.va_end:
+
+main:
+mytest Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest10653.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest10653.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest10653.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest10653.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = /root/piecewise/src/build-llvm/bin/clang
+CFLAGS = -flto -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = /root/piecewise/src/build-llvm/bin/clang -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = /root/piecewise/src/build-llvm/bin/clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -flto -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure
+Mon May 16 10:12:12 CST 2022
+=== ztest11313.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/root/piecewise/src/build-llvm/bin/clang -c ztest11313.c
+
+
+Include all virtual functions
+Code Pointer Mode: local scan
+Code Pointer Mode: local scan1
+hellogetchar
+hello:
+getchar 
+getchar:
+will read the assembly function of callgraphs
+AsmPrinter printf function Name() of callerhello
+the name of calleegetchar
+AsmPrinter printf function Name() of callergetchar
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest11313.c ===
+int foo() { return 0; }
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto ztest11313.c
+
+Checking for shared library support...
+=== ztest11313.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/root/piecewise/src/build-llvm/bin/clang -w -c -flto -fPIC ztest11313.c
+/root/piecewise/src/build-llvm/bin/clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -flto -fPIC -o ztest11313.so ztest11313.o
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+processObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .data.rel.localget section name = .rela.data.rel.localget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectprocessObject
+hello:
+getchar 
+getchar:
+Building shared library libz.so.1.2.8 with /root/piecewise/src/build-llvm/bin/clang.
+
+=== ztest11313.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest11313.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest11313.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+/root/piecewise/src/build-llvm/bin/clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest11313 ztest11313.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+main:
+__errno_location strerror strlen 
+__errno_location:
+
+strerror:
+
+strlen:
+Checking for strerror... Yes.
+
+=== ztest11313.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest11313.c
+Checking for unistd.h... Yes.
+
+=== ztest11313.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest11313.c
+Checking for stdarg.h... Yes.
+
+=== ztest11313.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest11313.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest11313.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/root/piecewise/src/build-llvm/bin/clang -flto -D_LARGEFILE64_SOURCE=1 -o ztest11313 ztest11313.c
+processObjectget section name = get section name = .note.ABI-tagget section name = .textget section name = .rela.textget section name = .rodata.cst4get section name = .eh_frameget section name = .rela.eh_frameget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .rela.initget section name = .finiget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .tm_clone_tableget section name = .fini_arrayget section name = .rela.fini_arrayget section name = .init_arrayget section name = .rela.init_arrayget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .eh_frameget section name = .tm_clone_tableget section name = .commentget section name = .note.GNU-stackget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .initget section name = .finiget section name = .note.GNU-stackget section name = .shstrtabprocessObjectprocessObjectprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .sh
+
+
+Object-sensitive Analysis
+Code Pointer Mode: local scan
+strtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectget section name = get section name = .textget section name = .rela.textget section name = .dataget section name = .bssget section name = .note.GNU-stackget section name = .eh_frameget section name = .rela.eh_frameget section name = .symtabget section name = .strtabget section name = .shstrtabprocessObjectprocessObject
+mytest:
+vsnprintf 
+llvm.va_start:
+
+vsnprintf:
+
+llvm.va_end:
+
+main:
+mytest Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest11313.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest11313.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest11313.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+/root/piecewise/src/build-llvm/bin/clang -c -flto -D_LARGEFILE64_SOURCE=1 ztest11313.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = /root/piecewise/src/build-llvm/bin/clang
+CFLAGS = -flto -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = /root/piecewise/src/build-llvm/bin/clang -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = /root/piecewise/src/build-llvm/bin/clang -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -flto -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.8
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+

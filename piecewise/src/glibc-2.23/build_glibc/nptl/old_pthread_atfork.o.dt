@@ -1,0 +1,16 @@
+/root/piecewise/src/glibc-2.23/build_glibc/nptl/old_pthread_atfork.o: \
+ old_pthread_atfork.c \
+ /root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build_glibc/config.h \
+ ../sysdeps/generic/symbol-hacks.h ../include/shlib-compat.h
+
+/root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build_glibc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:
+
+../include/shlib-compat.h:

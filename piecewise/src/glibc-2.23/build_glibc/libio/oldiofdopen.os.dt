@@ -1,0 +1,18 @@
+/root/piecewise/src/glibc-2.23/build_glibc/libio/oldiofdopen.os: \
+ oldiofdopen.c /root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build_glibc/config.h \
+ ../sysdeps/generic/symbol-hacks.h ../include/shlib-compat.h \
+ /root/piecewise/src/glibc-2.23/build_glibc/abi-versions.h
+
+/root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build_glibc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:
+
+../include/shlib-compat.h:
+
+/root/piecewise/src/glibc-2.23/build_glibc/abi-versions.h:

@@ -1,0 +1,19 @@
+/root/piecewise/src/glibc-2.23/build_glibc/nptl/pthread_kill_other_threads.os: \
+ pthread_kill_other_threads.c \
+ /root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build_glibc/config.h \
+ ../sysdeps/generic/symbol-hacks.h ../include/shlib-compat.h \
+ /root/piecewise/src/glibc-2.23/build_glibc/abi-versions.h
+
+/root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build_glibc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:
+
+../include/shlib-compat.h:
+
+/root/piecewise/src/glibc-2.23/build_glibc/abi-versions.h:

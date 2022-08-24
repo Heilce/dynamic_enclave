@@ -1,0 +1,46 @@
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/wcsmbs/wcsrchr.o: \
+ ../sysdeps/x86_64/wcsrchr.S \
+ /root/piecewise/src/glibc-2.23/build-tree/amd64-libc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build-tree/amd64-libc/config.h \
+ ../sysdeps/generic/symbol-hacks.h \
+ ../sysdeps/unix/sysv/linux/x86_64/sysdep.h \
+ ../sysdeps/unix/sysv/linux/sysdep.h ../sysdeps/unix/x86_64/sysdep.h \
+ ../sysdeps/unix/sysdep.h ../sysdeps/generic/sysdep.h \
+ ../sysdeps/generic/dwarf2.h ../sysdeps/unix/sysv/linux/sys/syscall.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd_64.h ../sysdeps/x86_64/sysdep.h \
+ ../sysdeps/x86_64/nptl/tls.h \
+ /root/piecewise/src/glibc-2.23/build-tree/amd64-libc/tcb-offsets.h
+
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:
+
+../sysdeps/unix/sysv/linux/x86_64/sysdep.h:
+
+../sysdeps/unix/sysv/linux/sysdep.h:
+
+../sysdeps/unix/x86_64/sysdep.h:
+
+../sysdeps/unix/sysdep.h:
+
+../sysdeps/generic/sysdep.h:
+
+../sysdeps/generic/dwarf2.h:
+
+../sysdeps/unix/sysv/linux/sys/syscall.h:
+
+/usr/include/x86_64-linux-gnu/asm/unistd.h:
+
+/usr/include/x86_64-linux-gnu/asm/unistd_64.h:
+
+../sysdeps/x86_64/sysdep.h:
+
+../sysdeps/x86_64/nptl/tls.h:
+
+/root/piecewise/src/glibc-2.23/build-tree/amd64-libc/tcb-offsets.h:

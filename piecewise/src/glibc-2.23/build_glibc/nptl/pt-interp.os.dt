@@ -1,0 +1,18 @@
+/root/piecewise/src/glibc-2.23/build_glibc/nptl/pt-interp.os: pt-interp.c \
+ /root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h \
+ ../include/libc-symbols.h \
+ /root/piecewise/src/glibc-2.23/build_glibc/config.h \
+ ../sysdeps/generic/symbol-hacks.h ../elf/interp.c \
+ /root/piecewise/src/glibc-2.23/build_glibc/runtime-linker.h
+
+/root/piecewise/src/glibc-2.23/build_glibc/libc-modules.h:
+
+../include/libc-symbols.h:
+
+/root/piecewise/src/glibc-2.23/build_glibc/config.h:
+
+../sysdeps/generic/symbol-hacks.h:
+
+../elf/interp.c:
+
+/root/piecewise/src/glibc-2.23/build_glibc/runtime-linker.h:
